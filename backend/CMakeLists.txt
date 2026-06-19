@@ -32,7 +32,7 @@ target_link_directories(ai_food_planner_core PUBLIC ${MICROHTTPD_LIBRARY_DIRS} $
 
 target_link_libraries(ai_food_planner_core
     PUBLIC
-        SQLite3::SQLite3
+        SQLite::SQLite3
         CURL::libcurl
         Threads::Threads
         ${MICROHTTPD_LIBRARIES}

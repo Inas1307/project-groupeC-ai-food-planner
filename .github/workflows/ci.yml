@@ -22,15 +22,15 @@ jobs:
 
       - name: Configure CMake
         working-directory: backend
-        run: cmake ..
+        run: cmake -S . -B build-ci
 
       - name: Build C backend
         working-directory: backend
-        run: make
+        run: cmake --build build-ci
 
       - name: Run C tests
         working-directory: backend
-        run: ctest --verbose
+        run: ctest --test-dir build-ci --verbose
 
   build-web:
     runs-on: ubuntu-latest
